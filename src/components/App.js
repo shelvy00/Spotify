@@ -7,43 +7,33 @@ import { Buffer } from "buffer";
 
 const App = () => {
 
-    const client_id = CLIENT_ID; // Your client id
-    const client_secret = CLIENT_SECRET; // Your secret 
+    const client_id = "06466eddfb64409d9c23ab34d3fa8a21"; // Your client id
+    const client_secret = "b968fb151dad44c8a017644219db5519"; // Your secret 
     
     console.log(client_id)
 
     // your application requests authorization
-    const authOptions = {
-      url: 'https://accounts.spotify.com/api/token',
+
+    useEffect(() => { 
+        
+    axios.post('https://accounts.spotify.com/api/token',{
       headers: {
-        'Authorization': 'Basic ' + ( new Buffer.from(client_id + ':' + client_secret).toString('base64'))
+        'Authorization': 'Basic ' +  (new Buffer.from(client_id + ':' + client_secret).toString('base64')),
+        'Content-Type' : 'application/x-www-form-urlencoded'
       },
       form: {
         grant_type: 'client_credentials'
       },
       json: true
-    };
+    })
+     .then(tokenResponse => {
+       console.log(tokenResponse)
+     });
+    }, [])
 
-   useEffect(() => { 
-    axios.post(authOptions, function(error, response, body) {
-      if (!error && response.statusCode === 200) {
+       // use the access token to access the Spotify Web API
+
     
-        // use the access token to access the Spotify Web API
-        const token = body.access_token;
-        const options = {
-          url: 'https://api.spotify.com/v1/search',
-          headers: {
-            'Authorization': 'Bearer ' + token
-          },
-          json: true
-        };
-        axios.get(options, function(error, response, body) {
-          console.log(body);
-        });
-      }
-    });  
-}, [])
-
   return (
     <div>
       Hey
