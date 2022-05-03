@@ -7,15 +7,15 @@ import { Buffer } from "buffer";
 
 const App = () => {
 
-    const client_id = "06466eddfb64409d9c23ab34d3fa8a21"; // Your client id
-    const client_secret = "b968fb151dad44c8a017644219db5519"; // Your secret 
+    const client_id = process.env.CLIENT_ID; // Your client id
+    const client_secret = process.env.CLIENT_SECRET; // Your secret 
     
     console.log(client_id)
 
     // your application requests authorization
 
     useEffect(() => { 
-        
+
     axios.post('https://accounts.spotify.com/api/token',{
       headers: {
         'Authorization': 'Basic ' +  (new Buffer.from(client_id + ':' + client_secret).toString('base64')),
