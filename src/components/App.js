@@ -1,12 +1,13 @@
 import React from 'react';
-import axios from "axios";
 import SearchBar from './SearchBar';
+import Header from './Header';
 
 const App = () => {
 
     
   return (
-    <div>
+    <div className="ui container">
+     <Header />   
      <SearchBar />
     </div>
   )
