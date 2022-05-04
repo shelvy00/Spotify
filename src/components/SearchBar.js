@@ -21,7 +21,7 @@ const SearchBar = () => {
    useEffect(() => { 
     axios('https://accounts.spotify.com/api/token',{
       headers: {
-        'Authorization': 'Basic ' +  (new Buffer.from( "06466eddfb64409d9c23ab34d3fa8a21" + ':' + "b968fb151dad44c8a017644219db5519").toString('base64')),
+        'Authorization': 'Basic ' +  (new Buffer.from( client_id + ':' + client_secret ).toString('base64')),
         'Content-Type' : 'application/x-www-form-urlencoded'
       },
       data: "grant_type=client_credentials",
@@ -59,10 +59,10 @@ const SearchBar = () => {
                 id: song.id,
                 artist: song.artists[0].name,
             }
-        }))
-    })
+          }))
+        })
     
-  })
+    })
     if (!term) {
         return () => {
             return null;
