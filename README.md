@@ -1,15 +1,13 @@
 
 ## Shelvy's Spotify App
 
-- Music app using Spotify API that allows user to search and play any song on Spotify.
+Music app using Spotify API that allows user to search and play any song on Spotify.
 
-### `npm start`
+### Project Description
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+In the searchbar, enter any artist/song you have in mind. The app will render a list of tracks on the screen. Once you click a card on screen, a new tab of the song on Spotify will open on your browser. From there you will be able to listen to the track on Spotify!
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+
 
 ### `npm test`
 
