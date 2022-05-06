@@ -1,11 +1,7 @@
-Shelvy's Spotify App
 
+## Shelvy's Spotify App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
+Music app using Spotify API that allows user to search and play any song on Spotify.
 
 ### `npm start`
 
