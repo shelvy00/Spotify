@@ -1,7 +1,7 @@
 
 ## Shelvy's Spotify App
 
-Music app using Spotify API that allows user to search and play any song on Spotify.
+- Music app using Spotify API that allows user to search and play any song on Spotify.
 
 ### `npm start`
 
